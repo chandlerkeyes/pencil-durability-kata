@@ -8,6 +8,10 @@ export default class Pencil {
     return this.durability;
   }
 
+  getPencilLength() {
+    return 49;
+  }
+
   updatePencilDurability(character) {
     if (character !== ' ') {
       character === character.toLowerCase() ? this.durability -= 1 : this.durability -= 2;
