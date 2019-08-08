@@ -99,4 +99,18 @@ describe("Pencil Durability Kata Tests", () => {
 
     expect(result).to.equal(49);
   });
+
+  it("Decreases length by 5 after being sharpened 5 times with an initial length of 50", () => {
+    const pencil = new Pencil(50, 50);
+
+    pencil.sharpen();
+    pencil.sharpen();
+    pencil.sharpen();
+    pencil.sharpen();
+    pencil.sharpen();
+
+    const result = pencil.getPencilLength();
+
+    expect(result).to.equal(45);
+  });
 });

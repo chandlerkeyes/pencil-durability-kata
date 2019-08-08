@@ -1,7 +1,8 @@
 export default class Pencil {
-  constructor(durability = 50) {
+  constructor(durability = 50, length) {
     this.durability = durability;
     this.maxDurability = durability
+    this.length = length;
   }
 
   getPencilDurability() {
@@ -9,13 +10,17 @@ export default class Pencil {
   }
 
   getPencilLength() {
-    return 49;
+    return this.length;
   }
 
   updatePencilDurability(character) {
     if (character !== ' ') {
       character === character.toLowerCase() ? this.durability -= 1 : this.durability -= 2;
     }
+  }
+
+  updatePencilLength() {
+    this.length -= 1;
   }
 
   writeOnPaper(paper, textToWrite) {
@@ -28,6 +33,7 @@ export default class Pencil {
   }
 
   sharpen() {
+    this.updatePencilLength();
     this.durability = this.maxDurability;
   }
 };
