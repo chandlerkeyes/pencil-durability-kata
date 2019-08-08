@@ -113,4 +113,16 @@ describe("Pencil Durability Kata Tests", () => {
 
     expect(result).to.equal(45);
   });
+
+  it("Disallows pencil to be sharpened after length reaches 0", () => {
+    const pencil = new Pencil(50, 2);
+
+    pencil.sharpen();
+    pencil.sharpen();
+    pencil.sharpen();
+
+    const result = pencil.getPencilLength();
+
+    expect(result).to.equal(0);
+  });
 });
