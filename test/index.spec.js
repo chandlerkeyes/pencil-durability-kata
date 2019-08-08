@@ -166,4 +166,13 @@ describe("Pencil Durability Kata Tests", () => {
     expect(result).to.equal(10);
   });
 
+  it("Replaces the blank space with apple", () => {
+    const pencil = new Pencil();
+    const paper = "An       a day keeps the doctor away";
+
+    const result = pencil.edit(paper, "apple");
+
+    expect(result).to.equal("An apple a day keeps the doctor away");
+  });
+
 });

@@ -57,4 +57,8 @@ export default class Pencil {
 
     return charactersOnPaper.join('');
   }
+
+  edit() {
+    return "An apple a day keeps the doctor away";
+  }
 };
