@@ -24,18 +24,18 @@ describe("Pencil Durability Kata Tests", () => {
     expect(result).to.equal("Hi, my name is Chandler and I love to code!");
   });
 
-  it(`Decreases pencil durability by 5 after writing hello with a durability of 50`, () => {
+  it("Decreases pencil durability by 5 after writing 'hello' with a durability of 50", () => {
     const pencil = new Pencil(50);
     const paper = '';
 
-    pencil.writeOnPaper(paper, "Hello")
+    pencil.writeOnPaper(paper, "hello")
 
     const result = pencil.getPencilDurability();
 
     expect(result).to.equal(45);
   });
 
-  it('Decreases pencil durability by 10 after writing hello world with a durability of 50', () => {
+  it("Decreases pencil durability by 10 after writing 'hello world' with a durability of 50", () => {
     const pencil = new Pencil(50);
     const paper = '';
 
@@ -44,5 +44,16 @@ describe("Pencil Durability Kata Tests", () => {
     const result = pencil.getPencilDurability();
 
     expect(result).to.equal(40);
+  });
+
+  it("Decreases pencil durability by 9 after writing 'Chandler' with a durability of 50", () => {
+    const pencil = new Pencil(50);
+    const paper = '';
+
+    pencil.writeOnPaper(paper, "Chandler");
+
+    const result = pencil.getPencilDurability();
+
+    expect(result).to.equal(41);
   });
 });

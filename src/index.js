@@ -8,7 +8,13 @@ export default class Pencil {
   }
 
   updatePencilDurability(character) {
-    character !== " " ? this.pencilDurability -= 1 : this.pencilDurability;
+    if (character !== ' ') {
+      if (character === character.toLowerCase()) {
+        this.pencilDurability -= 1;
+      } else {
+        this.pencilDurability -= 2;
+      }
+    }
   }
 
   writeOnPaper(paper, textToWrite) {
