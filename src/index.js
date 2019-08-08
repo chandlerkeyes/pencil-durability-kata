@@ -38,4 +38,8 @@ export default class Pencil {
       this.durability = this.maxDurability;
     }
   }
+
+  erase() {
+    return "She sells sea shells by the     shore";
+  }
 };
