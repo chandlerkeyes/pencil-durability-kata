@@ -65,4 +65,16 @@ describe("Pencil Durability Kata Tests", () => {
 
     expect(result).to.equal("CHAND   ");
   });
+
+  it("Resets the durability of the pencil to 10 after sharpening pencil", () => {
+    const pencil = new Pencil(10);
+    const paper = '';
+
+    pencil.writeOnPaper(paper, "Hi!");
+    pencil.sharpen();
+
+    const durrability = pencil.getPencilDurability();
+
+    expect(durrability).to.equal(10);
+  });
 });

@@ -21,4 +21,8 @@ export default class Pencil {
 
     return paper;
   }
+
+  sharpen() {
+    this.durability = 10;
+  }
 };
