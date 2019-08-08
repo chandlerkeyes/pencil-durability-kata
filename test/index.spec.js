@@ -30,8 +30,19 @@ describe("Pencil Durability Kata Tests", () => {
 
     pencil.writeOnPaper(paper, "Hello")
 
-    const result = pencil.getCurrentDurability();
+    const result = pencil.getPencilDurability();
 
     expect(result).to.equal(45);
+  });
+
+  it('Decreases pencil durability by 10 after writing hello world with a durability of 50', () => {
+    const pencil = new Pencil(50);
+    const paper = '';
+
+    pencil.writeOnPaper(paper, "hello world");
+
+    const result = pencil.getPencilDurability();
+
+    expect(result).to.equal(40);
   });
 });
