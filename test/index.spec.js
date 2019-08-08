@@ -15,4 +15,12 @@ describe("Pencil Durability Kata Tests", () => {
 
     expect(result).to.equal("Goodbye!");
   });
+
+  it("Writes text to paper that already has text written on it", () => {
+    const pencil = new Pencil();
+    const paper = "Hi, my name is Chandler ";
+    const result = pencil.writeOnPaper(paper, "and I love to code!");
+
+    expect(result).to.equal("Hi, my name is Chandler and I love to code!");
+  });
 });
