@@ -1,31 +1,22 @@
 export default class Pencil {
-  constructor(pencilDurability = 50) {
-    this.pencilDurability = pencilDurability;
+  constructor(durability = 50) {
+    this.durability = durability;
   }
 
   getPencilDurability() {
-    return this.pencilDurability;
+    return this.durability;
   }
 
   updatePencilDurability(character) {
     if (character !== ' ') {
-      if (character === character.toLowerCase()) {
-        this.pencilDurability -= 1;
-      } else {
-        this.pencilDurability -= 2;
-      }
+      character === character.toLowerCase() ? this.durability -= 1 : this.durability -= 2;
     }
   }
 
   writeOnPaper(paper, textToWrite) {
     for (let i = 0; i < textToWrite.length; i++) {
       this.updatePencilDurability(textToWrite.charAt(i));
-
-      if (this.pencilDurability >= 0) {
-        paper = paper + textToWrite.charAt(i);
-      } else {
-        paper = paper + ' ';
-      }
+      this.durability >= 0 ? paper += textToWrite.charAt(i) : paper += " ";
     }
 
     return paper;
