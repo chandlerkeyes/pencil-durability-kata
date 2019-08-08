@@ -155,7 +155,7 @@ describe("Pencil Durability Kata Tests", () => {
     expect(result).to.equal(15);
   });
 
-  it("Decreases eraser durability by 10 after erasing 'shore'", () => {
+  it("Decreases eraser durability by 10 after erasing 'he sea shore'", () => {
     const pencil = new Pencil(50, 50, 20);
     const paper = "She sells sea shells by the sea shore";
 
