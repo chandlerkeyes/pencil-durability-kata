@@ -1,6 +1,7 @@
 export default class Pencil {
   constructor(durability = 50) {
     this.durability = durability;
+    this.maxDurability = durability
   }
 
   getPencilDurability() {
@@ -23,6 +24,6 @@ export default class Pencil {
   }
 
   sharpen() {
-    this.durability = 10;
+    this.durability = this.maxDurability;
   }
 };
