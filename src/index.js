@@ -13,6 +13,10 @@ export default class Pencil {
     return this.length;
   }
 
+  getEraserDurability() {
+    return 15;
+  }
+
   updatePencilDurability(character) {
     if (character !== ' ') {
       character === character.toLowerCase() ? this.durability -= 1 : this.durability -= 2;
