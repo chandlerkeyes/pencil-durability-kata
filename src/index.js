@@ -60,12 +60,13 @@ export default class Pencil {
 
   edit(paper, textToAdd) {
     const charactersOnPaper = paper.split('');
+    const indexOfBlankSpace = paper.indexOf("  ") + 1;
 
     for (let i = 0; i < textToAdd.length; i++) {
-      if (charactersOnPaper[paper.indexOf("  ") + 1 + i] === " ") {
-        charactersOnPaper[paper.indexOf("  ") + 1 + i] = textToAdd.charAt(i);
+      if (charactersOnPaper[indexOfBlankSpace + i] === " ") {
+        charactersOnPaper[indexOfBlankSpace + i] = textToAdd.charAt(i);
       } else {
-        charactersOnPaper[paper.indexOf("  ") + 1 + i] = "@";
+        charactersOnPaper[indexOfBlankSpace + i] = "@";
       }
     }
 
