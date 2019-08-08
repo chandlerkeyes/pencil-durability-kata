@@ -56,4 +56,13 @@ describe("Pencil Durability Kata Tests", () => {
 
     expect(result).to.equal(41);
   });
+
+  it("Writes CHANDLER with a durability of 10 and returns 'CHAND   '", () => {
+    const pencil = new Pencil(10);
+    const paper = '';
+
+    const result = pencil.writeOnPaper(paper, "CHANDLER");
+
+    expect(result).to.equal("CHAND   ");
+  });
 });

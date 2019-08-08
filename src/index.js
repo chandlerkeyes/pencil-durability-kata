@@ -23,6 +23,8 @@ export default class Pencil {
 
       if (this.pencilDurability >= 0) {
         paper = paper + textToWrite.charAt(i);
+      } else {
+        paper = paper + ' ';
       }
     }
 
