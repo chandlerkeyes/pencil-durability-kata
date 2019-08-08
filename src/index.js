@@ -1,8 +1,9 @@
 export default class Pencil {
-  constructor(durability = 50, length = 50) {
+  constructor(durability = 50, length = 50, eraserDurability) {
     this.durability = durability;
-    this.maxDurability = durability
+    this.maxDurability = durability;
     this.length = length;
+    this.eraserDurability = eraserDurability
   }
 
   getPencilDurability() {
@@ -14,7 +15,7 @@ export default class Pencil {
   }
 
   getEraserDurability() {
-    return 15;
+    return this.eraserDurability;
   }
 
   updatePencilDurability(character) {
@@ -48,6 +49,9 @@ export default class Pencil {
     const indexOfWord = paper.lastIndexOf(text) + text.length - 1;
 
     for (let i = 0; i < text.length; i++) {
+      if (charactersOnPaper[indexOfWord - i] !== " ") {
+        this.eraserDurability -= 1;
+      }
       charactersOnPaper[indexOfWord - i] = " ";
     }
 
