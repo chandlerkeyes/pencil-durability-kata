@@ -39,7 +39,14 @@ export default class Pencil {
     }
   }
 
-  erase() {
-    return "She sells sea shells by the     shore";
+  erase(paper, text) {
+    const charactersOnPaper = paper.split('');
+    const indexOfWord = paper.lastIndexOf(text) + text.length - 1;
+
+    for (let i = 0; i < text.length; i++) {
+      charactersOnPaper[indexOfWord - i] = " ";
+    }
+
+    return charactersOnPaper.join('');
   }
 };

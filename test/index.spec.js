@@ -134,4 +134,13 @@ describe("Pencil Durability Kata Tests", () => {
 
     expect(result).to.equal("She sells sea shells by the     shore");
   });
+
+  it("Erases the last instance of 'sells' off the paper with text", () => {
+    const pencil = new Pencil(20);
+    const paper = "She sells sea shells by the sea shore";
+
+    const result = pencil.erase(paper, "sells");
+
+    expect(result).to.equal("She       sea shells by the sea shore");
+  });
 });
