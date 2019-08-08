@@ -175,4 +175,12 @@ describe("Pencil Durability Kata Tests", () => {
     expect(result).to.equal("An apple a day keeps the doctor away");
   });
 
+  it("Replaces the blank space with avocado, overriding text gets replaced with @", () => {
+    const pencil = new Pencil();
+    const paper = "An       a day keeps the doctor away";
+
+    const result = pencil.edit(paper, "avocado");
+
+    expect(result).to.equal("An avocad@ day keeps the doctor away");
+  });
 });

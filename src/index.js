@@ -58,7 +58,17 @@ export default class Pencil {
     return charactersOnPaper.join('');
   }
 
-  edit() {
-    return "An apple a day keeps the doctor away";
+  edit(paper, textToAdd) {
+    const charactersOnPaper = paper.split('');
+
+    for (let i = 0; i < textToAdd.length; i++) {
+      if (charactersOnPaper[paper.indexOf("  ") + 1 + i] === " ") {
+        charactersOnPaper[paper.indexOf("  ") + 1 + i] = textToAdd.charAt(i);
+      } else {
+        charactersOnPaper[paper.indexOf("  ") + 1 + i] = "@";
+      }
+    }
+
+    return charactersOnPaper.join('');
   }
 };
