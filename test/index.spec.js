@@ -8,4 +8,11 @@ describe("Pencil Durability Kata Tests", () => {
 
     expect(result).to.equal("Hello World!");
   });
+
+  it("Writes Goodbye! on a blank piece of paper", () => {
+    const pencil = new Pencil();
+    const result = pencil.writeOnPaper("", "Goodbye!");
+
+    expect(result).to.equal("Goodbye!");
+  });
 });
