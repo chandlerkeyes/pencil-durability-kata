@@ -23,4 +23,15 @@ describe("Pencil Durability Kata Tests", () => {
 
     expect(result).to.equal("Hi, my name is Chandler and I love to code!");
   });
+
+  it(`Decreases pencil durability by 5 after writing hello with a durability of 50`, () => {
+    const pencil = new Pencil(50);
+    const paper = '';
+
+    pencil.writeOnPaper(paper, "Hello")
+
+    const result = pencil.getCurrentDurability();
+
+    expect(result).to.equal(45);
+  });
 });
