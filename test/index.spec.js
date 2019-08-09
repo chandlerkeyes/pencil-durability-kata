@@ -199,5 +199,14 @@ describe("Pencil Durability Kata Tests", () => {
 
       expect(result).to.equal("An avocad@ day keeps the doctor away");
     });
+
+    it("Edits nothing if blank space is not found", () => {
+      const pencil = new Pencil();
+      const paper = "An apple a day keeps the doctor away";
+
+      const result = pencil.edit(paper, "avocado");
+
+      expect(result).to.equal(undefined);
+    });
   })
 });

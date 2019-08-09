@@ -63,6 +63,10 @@ export default class Pencil {
   }
 
   edit(paper, textToAdd) {
+    if (paper.lastIndexOf("  ") < 0) {
+      return;
+    }
+
     const charactersOnPaper = paper.split('');
     const indexOfBlankSpace = paper.indexOf("  ") + 1;
 
