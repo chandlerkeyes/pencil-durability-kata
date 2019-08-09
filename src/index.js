@@ -45,6 +45,10 @@ export default class Pencil {
   }
 
   erase(paper, text) {
+    if (paper.lastIndexOf(text) < 0) {
+      return;
+    }
+
     const charactersOnPaper = paper.split('');
     const indexOfWord = paper.lastIndexOf(text) + text.length - 1;
 

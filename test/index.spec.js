@@ -149,6 +149,15 @@ describe("Pencil Durability Kata Tests", () => {
       expect(result).to.equal("She       sea shells by the sea shore");
     });
 
+    it("Erases nothing if the text provided is not found", () => {
+      const pencil = new Pencil(20);
+      const paper = "She sells sea shells by the sea shore";
+
+      const result = pencil.erase(paper, "apples");
+
+      expect(result).to.equal(undefined);
+    });
+
     it("Decreases eraser durability by 5 after erasing 'shore'", () => {
       const pencil = new Pencil(50, 50, 20);
       const paper = "She sells sea shells by the sea shore";
